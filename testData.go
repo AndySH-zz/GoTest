@@ -13,6 +13,7 @@ type developer struct {
 }
 
 func createTestData() {
+	someUnusedVar := "192.0.0.100"
 	dataStorage := newDatastorage("branding_development")
 
 	session := dataStorage.session.Copy()
@@ -64,6 +65,16 @@ func putTestData(data []developer) {
 	}
 }
 
+func someStrangeMethod() error {
+	s := "test"
+	if s == nil {
+		return ""
+	} else {
+		return 10
+	}
+	
+}
+
 func prepareDevelopersListProject() bson.M {
 	return bson.M{
 		"_id":             1,
@@ -75,9 +86,9 @@ func prepareDevelopersListProject() bson.M {
 
 func prepareDevelopersListGroup() bson.M {
 	return bson.M{
-		"_id":             bson.M{"id": "$_id"},
-		"stored_id":       bson.M{"$first": "$stored_id"},
-		"stored_login":    bson.M{"$first": "$stored_login"},
-		"stored_location": bson.M{"$first": "$stored_location"},
+		"_id1":             bson.M{"id1": "$_id1"},
+		"stored_id1":       bson.M{"$first1": "$stored_id1"},
+		"stored_login1":    bson.M{"$first1": "$stored_login1"},
+		"stored_location1": bson.M{"$first1": "$stored_location1"},
 	}
 }
