@@ -1,0 +1,6 @@
+log/*.log
+build/*
+debug
+mytest
+.vscode/*
+debug.test
